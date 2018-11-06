@@ -136,7 +136,7 @@ Try adding a route back to the homepage. Don't worry about content for now!
 
 ## Lab I: Stock Trader Basic
 
-Starter code: https://github.com/SF-WDI-LABS/react-router-intro/blob/master/stock_basic.md
+Instructions: https://github.com/SF-WDI-LABS/react-router-intro/blob/master/stock_basic.md
 
 Create a basic Stock Trader app using React Router. It should have the following:
 
