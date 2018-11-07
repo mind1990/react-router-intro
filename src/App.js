@@ -6,11 +6,19 @@ import {
 	Switch
 } from 'react-router-dom';
 
-import About from './About';
+import Header from './components/layouts/Header';
+import Home from './components/pages/Home';
+import About from './components/pages/About';
+import stockData from './data/stock-data.json';
 
 
 
 class App extends Component {
+
+	componentDidMount() {
+    this.setState({stocks: stockData});
+  }
+
   render() {
     return (
 			<header>
@@ -18,13 +26,15 @@ class App extends Component {
           <nav>
             {/* Create our nav bar links using the Link element from react router */}
              <ul>
-             	<li><Link to="/about">About</Link></li>
+             	<li><Link to="/">Home</Link></li>
+             	<li><Link to="/About">About</Link></li>
              </ul>
         	 </nav>
            	{/* Create the routes. This will not appear on the page. */}
              <div className="main">
              	<Switch>
-             		<Route path="/about" component={ About } />
+             		<Route exact path='/' component={ Home } />
+             		<Route exact path='/About' component={ About } />
            		</Switch>
 								</div>
            </header>
