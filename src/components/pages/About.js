@@ -4,7 +4,7 @@ class About extends Component {
   render () {
     return (
       <div>
-        <h1>All about stocks. Read it here, folks!</h1>
+        <h3>We provide the most accurate share prices around!</h3>
       </div>
     )
   }

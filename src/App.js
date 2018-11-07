@@ -10,6 +10,7 @@ import Header from './components/layouts/Header';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import stockData from './data/stock-data.json';
+import Stocks from './components/stocks/Stocks';
 
 
 
@@ -20,26 +21,19 @@ class App extends Component {
   }
 
   render() {
-    return (
-			<header>
-        <h1>Learn Routing</h1>
-          <nav>
-            {/* Create our nav bar links using the Link element from react router */}
-             <ul>
-             	<li><Link to="/">Home</Link></li>
-             	<li><Link to="/About">About</Link></li>
-             </ul>
-        	 </nav>
-           	{/* Create the routes. This will not appear on the page. */}
-             <div className="main">
-             	<Switch>
-             		<Route exact path='/' component={ Home } />
-             		<Route exact path='/About' component={ About } />
-           		</Switch>
-								</div>
-           </header>
-        );
-    }
+  	return (
+      <div>
+  		  <Header />
+          <div className="container">
+           	<Switch>
+           		<Route exact path='/' component={ Home } />
+           		<Route exact path='/About' component={ About } />
+           		<Route exact path="/stocks" render={() => <Stocks stocks={this.state.stocks} />} />
+         		</Switch>
+  			  </div>
+      </div>
+    );
+  }
 }
 
 export default App;
